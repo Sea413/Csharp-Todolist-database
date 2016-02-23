@@ -151,7 +151,7 @@ namespace ToDoList
       SqlDataReader rdr = null;
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("SELECT * FROM tasks WHERE category_id = @CategoryId;", conn);
+      SqlCommand cmd = new SqlCommand("SELECT * FROM tasks WHERE category_id = @CategoryId ORDER BY date ASC;", conn);
       SqlParameter categoryIdParameter = new SqlParameter();
       categoryIdParameter.ParameterName = "@CategoryId";
       categoryIdParameter.Value = this.GetId();

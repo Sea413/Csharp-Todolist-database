@@ -59,7 +59,7 @@ namespace ToDoList
     }
     public int GetCategoryId()
   {
-    return _categoryId; 
+    return _categoryId;
   }
   public void SetCategoryId(int newCategoryId)
   {
@@ -81,7 +81,7 @@ namespace ToDoList
     SqlDataReader rdr = null;
     conn.Open();
 
-    SqlCommand cmd = new SqlCommand("SELECT * FROM tasks;", conn);
+    SqlCommand cmd = new SqlCommand("SELECT * FROM tasks ORDER BY date ASC;", conn);
     rdr = cmd.ExecuteReader();
 
     while(rdr.Read())
@@ -150,7 +150,7 @@ namespace ToDoList
     SqlDataReader rdr = null;
     conn.Open();
 
-    SqlCommand cmd = new SqlCommand("SELECT * FROM tasks WHERE id = @TaskId;", conn);
+    SqlCommand cmd = new SqlCommand("SELECT * FROM tasks WHERE id = @TaskId ORDER BY date ASC;", conn);
     SqlParameter taskIdParameter = new SqlParameter();
     taskIdParameter.ParameterName = "@TaskId";
     taskIdParameter.Value = id.ToString();
