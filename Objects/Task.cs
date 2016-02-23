@@ -59,7 +59,7 @@ namespace ToDoList
     }
     public int GetCategoryId()
   {
-    return _categoryId;
+    return _categoryId; 
   }
   public void SetCategoryId(int newCategoryId)
   {
