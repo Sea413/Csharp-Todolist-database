@@ -124,6 +124,8 @@ namespace ToDoList
 
       int foundCategoryId = 0;
       string foundCategoryDescription = null;
+      // int taskCategoryId = 0;
+      // int taskdate = 0;
 
       while(rdr.Read())
       {
@@ -162,7 +164,8 @@ namespace ToDoList
         int taskId = rdr.GetInt32(0);
         string taskDescription = rdr.GetString(1);
         int taskCategoryId = rdr.GetInt32(2);
-        Task newTask = new Task(taskDescription, taskCategoryId, taskId);
+        string taskdate =rdr.GetString(3);
+        Task newTask = new Task(taskDescription, taskCategoryId, taskdate, taskId);
         tasks.Add(newTask);
       }
       if (rdr != null)
